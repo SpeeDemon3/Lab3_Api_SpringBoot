@@ -31,6 +31,10 @@ public class CarController {
 
     }
 
+    /**
+     * Endpoint para mostrar el listado de coches
+     * @return Respuesta 200(ok) || 500 (internal server error)
+     */
     @GetMapping("/showCars")
     public ResponseEntity<?> showCars() {
 
