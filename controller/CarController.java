@@ -35,11 +35,14 @@ public class CarController {
     public ResponseEntity<?> showCars() {
 
         if (carService.returnListCars().size() >0) {
+            // Si hay coches en la lista se muestran
             log.info("\tList Car:");
             carService.showCar();
+            // Devuelve una respuesta HTTP 200 (OK) indicando que se encontro algun  coche
             return ResponseEntity.ok().build();
         } else {
             log.error("\tServer Error....");
+            // Devuelve una respuesta HTTP 500 (internalServerError) indicando que no se encontraron coches
             return ResponseEntity.internalServerError().build();
         }
 
